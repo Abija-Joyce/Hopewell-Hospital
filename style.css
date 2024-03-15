@@ -1,0 +1,688 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css);
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js);
+
+
+:root{
+  --color-primary: rgb(58, 165, 253);
+  --color-secondary: rgb(50, 50, 112);
+  --color-light: rgb(253, 253, 253);
+  --color-dark: rgb(0, 0, 0);
+  --color-tertiary: rgb(136, 241, 192);
+  --color-hover: rgb(118, 118, 247);
+  --color-bg: rgb(245, 245, 255);
+
+  --font-cookie: 'Cookie';
+  --font-poppins: 'poppins', sans-serif;
+  --font-baskerville: 'libre Baskerville'
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: var(--font-poppins);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.img, .aboutImage, .img2{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* NAVBAR */
+.button {
+  display: flex;
+}
+
+.box {
+  width: 35px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color:  var(--color-light);
+  transition: all .8s;
+  cursor: pointer;
+  position: relative;
+  background: var(--color-secondary);
+  overflow: hidden;
+}
+
+.box:before {
+  content: "H";
+  position: absolute;
+  top: 0;
+  background: var(--color-primary);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform .4s;
+}
+
+.box:nth-child(2)::before {
+  transform: translateY(-100%);
+  content: 'O';
+}
+
+.box:nth-child(3)::before {
+  content: 'S';
+}
+
+.box:nth-child(4)::before {
+  transform: translateY(-100%);
+  content: 'P';
+}
+
+.box:nth-child(5)::before {
+  content: 'I';
+}
+
+.box:nth-child(6)::before {
+transform: translateY(-100%);
+  content: 'T';
+}
+
+.box:nth-child(7)::before {
+  content: 'A';
+}
+
+.box:nth-child(8)::before {
+transform: translateY(-100%);
+  content: 'L';
+}
+
+.button:hover .box:before {
+  transform: translateY(0);
+}
+
+.navbar-items{
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+.nav-link{
+  color: var(--color-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: var(--font-poppins);
+}
+
+.nav-link::before {
+ margin-left: auto;
+}
+
+.nav-link::after, .nav-link::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  display: block;
+  transition: 0.5s;
+}
+
+.nav-link:hover::after, .nav-link:hover::before {
+  width: 100%;
+}
+
+/* HERO */
+.hero{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./Images/caregiver1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 140vh;
+  width: 100%;
+  display: block;
+  animation-name: grow;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes grow{
+  from{opacity: 0; transform: translateY(-35px);}
+  to{opacity: 1;transform: translateY(0px);}
+}
+
+.hero-text{
+  position: relative;
+  top: 45%;
+  animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.brand span{
+  font-family: var(--font-baskerville)!important;
+  font-size: 5rem;
+  font-weight: 700;
+  color:  var(--color-light);
+  transform: scale(0.94);
+}
+
+.hero-tag span, .caption p{
+  color: var(--color-tertiary);
+  letter-spacing: -0.17px;
+  font-family: var(--font-cookie);
+  font-size: 2.3rem;
+}
+
+@keyframes scale {
+  0%{
+    transform: translateY(60px);
+    opacity: 30%;
+  }
+
+  50%{
+    opacity: 60%;
+  }
+
+  100% {
+    transform: translateY(-60px);
+    opacity: 100%;
+  }
+}
+
+span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(8) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(9) {
+  animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.hero-contact {
+  position: relative;
+  overflow: hidden;
+  height: 3.5rem;
+  padding: 0 3rem;
+  background-color: var(--color-secondary);
+  background-size: 400%;
+  color:  var(--color-light);
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 1.5rem;
+}
+
+.hero-contact:hover::before {
+  transform: scaleX(1);
+}
+
+.hero-contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  background-color: var(--color-hover);
+  transition: all 0.475s;
+}
+
+.hero-btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media(max-width: 992px){
+  .hero{
+    height: 60vh;
+  }
+  
+  .brand span{
+    font-size: 2.3rem;
+    line-height:2rem;
+  }
+
+  .hero-tag span, .caption p{
+    font-size: 1.3rem;
+  }
+
+  .hero-contact {
+    height: 3rem;
+    padding: 0 2rem;
+    background-size: 400%;
+    font-size: 1rem;
+    border-radius: 1rem;
+  }
+}
+
+/* ABOUT */
+.about{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .aboutImage{
+  background-image: url(./Images/caregiver2.jpg);
+  width: 60%;
+  margin: 0;
+  height: 100vh;
+}
+
+.aboutText{
+  width: 50%;
+  height: 100vh; 
+  background-color: var(--color-bg);
+}
+
+.about .writeUp p{
+  font-family: var(--font-poppins);
+  font-size: 1.05rem;
+  line-height: 1.7rem
+}
+
+.about .email{
+  font-family: var(--font-baskerville);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.caption{
+  text-align: center;
+}
+
+.caption h1{
+  font-family: var(--font-baskerville);
+  color: var(--color-dark);
+  letter-spacing: -0.05rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@media(max-width: 992px){
+  .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about .aboutImage{
+    width: 100%;
+    height: 50vh;
+  }
+
+  .aboutText{
+    width: 100%;
+  }
+}
+
+/* SERVICES */
+.service-items:hover{
+  background-color: var(--color-hover);
+
+  .service-content h1{
+    color: var(--color-light);
+  }
+}
+
+.service-item{
+  width: 100%;
+  height: 100%;
+}
+
+.service-content img{
+  width: 35%;
+}
+
+.service-content h1{
+  font-family: var(--font-baskerville);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.service-content a{
+  color: var(--color-secondary);
+}
+
+.row h1{
+  font: 1rem;
+  font-family: var(--font-baskerville);
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.row h1:hover{
+  color: var(--color-hover);
+}
+
+.row>div>p{
+  color: var(--color-hover);
+  font-size: 0.8em;
+}
+
+.servBox h1{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.servBox p{
+  text-align: center;
+}
+
+.servBox img{
+  position: relative;
+  left: 40%;
+  margin-bottom: 1rem;
+}
+
+@media(max-width: 992px){
+  .service-content img{
+    width: 15%;
+  }
+
+  .service-content h1{
+    font-size: 1rem;
+  }
+}
+
+/* CONTACT */
+.contact{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./Images/caregiver1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100%;
+}
+
+/* CAREGIVER SERVICES */
+.careGiver{
+  position: relative;
+  top: 3rem;
+}
+
+.careGiver>div{
+  margin-right: 2rem;
+  width: 50%;
+}
+
+.careGiver .num{
+  margin-right: 2rem;
+  font-size: 1.5rem;
+  position: relative;
+  top:13px;
+  background-color: var(--color-hover);
+  border-radius: 50%;
+}
+
+.careGiver .careText{
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.careGiver .careText h4{
+  color: var(--color-dark);
+  font-family: var(--font-baskerville);
+}
+
+.careGiver .img{
+  background-image: url(./Images/caregiver3.jpg);
+  width: 55%;
+}
+
+@media (max-width: 992px) {
+  .careGiver .img{
+    display: none;
+  }
+
+  .careGiver>div{
+    width: 80%;
+  }
+
+  .careGiver .num{
+    font-size: 1rem;
+  }
+
+  .careText h4{
+    font-size: 1.2rem;
+  }
+}
+
+/* TEAMS */
+.team{
+  background-color: var(--color-bg);
+}
+
+.team .container{
+  display: flex;
+  flex-direction: row;
+}
+
+.team>div>div>img{
+  width: 100%;
+  height: 65vh; 
+}
+
+.name h3{
+  color: var(--color-dark);
+  font-family: var(--font-baskerville);
+}
+
+.name p{
+  color: var(--color-tertiary);
+  font-family: var(--font-cookie);
+  font-size: 2rem;
+}
+
+@media(max-width: 992px){
+  .team .container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team>div>div>img{
+    height: 75vh;
+  }
+}
+/* CONTAINER */
+.ABOUT{
+  background-color: var(--color-bg);
+}
+
+.about-us{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.img2{
+  width: 130%;
+  margin: 15px;
+  height: 100vh;
+  background-image: url(./Images/caregiver2.jpg);
+}
+
+@media (max-width: 992px){
+  .about-us{
+    flex-direction: column;
+  }
+
+  .img2{
+    width: 100%;
+    height: 50vh;
+  }
+
+  .about-us .hero-contact{
+    margin-bottom: 3rem;
+  }
+}
+
+/* IN-HOME SERVICES */
+.homeServ{
+  background-color: var(--color-bg); 
+  height: 90vh;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./Images/caregiver1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 68vh;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.testimonials>div>p{
+  font-family: var(--font-baskerville);
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 2rem;
+}
+
+.testimonials .review>img{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+/* OUR BLOG */
+.blog>div>.row>div>img{
+  width: 100%;
+}
+
+.blog>div>.row>div>div>h1{
+  font-size: 1.3rem;
+}
+
+.blog .row .col-4 img:hover{
+  transform: scale(1.1);
+}
+
+.blog>.row>div>div>h1{
+  font-size: 1.3rem;
+}
+
+.blog .row .mini img{
+  width: 10%;
+  height: 45%;
+}
+
+.mini p{
+  font-size: 0.8rem;
+}
+
+/* KEEP IN TOUCH - MAP */
+.map{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.map iframe{
+  border:0;
+  width : 50%;
+  height: 89.45vh;
+}
+
+.map>div{
+  width: 50%;
+  height: 89.45vh; 
+  background-color: var(--color-bg);
+}
+
+.map>div>.mapDetails{
+  text-align: left;
+}
+
+.map>div>.mapDetails>div>img{
+  width: 8%;
+  height: 80%;
+}
+
+.map>div>.mapDetails>div>.label{
+  font-family: var(--font-baskerville);
+  font-weight: 600;
+}
+
+.map>div>.mapDetails>div>.labelIn{
+  width: 60%;
+}
+
+@media (max-width: 992px){
+  .map{
+    flex-direction: column;
+  }
+
+  .map iframe{
+    width: 100%;
+    height: 50vh;
+  }
+
+  .map>div{
+    width: 100%;
+    height: 80vh;
+  }
+}
+
+/* FOOTER */
+footer{
+  height: 25vh;
+  background-color: var(--color-secondary);
+}
